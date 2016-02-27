@@ -16,7 +16,7 @@ title = "hello"
 Mac app that fixes that for you.**
 
 With the help of commands like [aha](https://github.com/theZiz/aha#readme) _any_ 
-command line output can be converted to HTML (see [tips](/tips/)).
+command line output can be converted to HTML.
 
 Throw in some creativity and you can build command line tools or adapters that 
 produce beautiful cli output with useful links, images, and anything else you 
@@ -24,6 +24,13 @@ can imagine.
 
 I'll take that beautiful HTML, and throw it in a window for you. Throw lots of 
 files at me quickly and I'll organize them in one window with a sidebar.
+
+### Common Uses
+
+* saving terminal output for reference
+* improved tool output
+* quick viewing of local html files
+
 
 ### Links:
 

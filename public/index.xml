@@ -6,8 +6,67 @@
     <description>Recent content on Fenestro: cli-&gt;html window</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 26 Feb 2016 08:06:18 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 27 Feb 2016 11:07:26 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>tips</title>
+      <link>http://localhost:1313/tips/</link>
+      <pubDate>Sat, 27 Feb 2016 11:07:26 -0500</pubDate>
+      
+      <guid>http://localhost:1313/tips/</guid>
+      <description>
+
+&lt;h2 id=&#34;ready-to-get-started:e7ca16f375e6c22df64705b42852662b&#34;&gt;Ready to get started?&lt;/h2&gt;
+
+&lt;p&gt;The easiest way to get started with Fenestro is to start piping output from
+your current command line apps into it. There are two unix utilities you&amp;rsquo;ll
+want in your arsenal to make this happen.&lt;/p&gt;
+
+&lt;h3 id=&#34;converting-command-line-output-to-html-with-aha:e7ca16f375e6c22df64705b42852662b&#34;&gt;Converting command line output to HTML with aha&lt;/h3&gt;
+
+&lt;p&gt;Aha is a simple utility that converts command line input to HTML. That&amp;rsquo;s it. You
+can install it with &lt;a href=&#34;http://brew.sh/&#34;&gt;Homebrew&lt;/a&gt; by saying &lt;code&gt;brew install aha&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;d recommend running it with the &lt;code&gt;--black&lt;/code&gt; option if you run a dark terminal
+theme.&lt;/p&gt;
+
+&lt;h3 id=&#34;maintain-colored-output-from-your-commands-with-unbuffer:e7ca16f375e6c22df64705b42852662b&#34;&gt;Maintain colored output from your commands with unbuffer&lt;/h3&gt;
+
+&lt;p&gt;When you pipe from one command to another you loose the ANSI Color Codes.
+For example &lt;code&gt;git diff HEAD^&lt;/code&gt; would give you a colorized diff of your code,
+but when you pipe it to another tool like aha, it becomes plain, colorless,
+text. To maintain those colors you&amp;rsquo;ll want to install &amp;ldquo;unbuffer&amp;rdquo;. Again, you
+can find it in homebrew and install by saying
+&lt;code&gt;brew install homebrew/dupes/expect&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: Unbuffer works by convincing your tool that it&amp;rsquo;s outputting to
+an interactive buffer. Some tools, like git, expect you to page through
+long output in interactive mode. You&amp;rsquo;ll need to disable that on calls that
+go through unbuffer. With git you just append &lt;code&gt;--no-pager&lt;/code&gt; immediately after
+&lt;code&gt;git&lt;/code&gt; For example: &lt;code&gt;git --no-pager diff HEAD^&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;putting-it-all-together:e7ca16f375e6c22df64705b42852662b&#34;&gt;Putting it all together&lt;/h3&gt;
+
+&lt;p&gt;Once you&amp;rsquo;ve got fenestro, unbuffer, and aha installed, you can chain them together like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;unbuffer git --no-pager diff HEAD^ | aha --black \
+| fenestro --name &amp;quot;diff&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For things you&amp;rsquo;ll use often, save yourself typing by making a function in your
+&lt;code&gt;~/.bashrc&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function dtf{ #diff to fenestro
+    unbuffer git --no-pager diff &amp;quot;$@&amp;quot; | aha --black \
+    | fenestro --name &amp;quot;diff&amp;quot;
+}
+# call that with
+# dtf HEAD^
+# to get the same effect as the longer command above
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>hello</title>
@@ -28,7 +87,7 @@
 Mac app that fixes that for you.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;With the help of commands like &lt;a href=&#34;https://github.com/theZiz/aha#readme&#34;&gt;aha&lt;/a&gt; &lt;em&gt;any&lt;/em&gt;
-command line output can be converted to HTML (see &lt;a href=&#34;http://localhost:1313/tips/&#34;&gt;tips&lt;/a&gt;).&lt;/p&gt;
+command line output can be converted to HTML.&lt;/p&gt;
 
 &lt;p&gt;Throw in some creativity and you can build command line tools or adapters that
 produce beautiful cli output with useful links, images, and anything else you
@@ -36,6 +95,14 @@ can imagine.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;ll take that beautiful HTML, and throw it in a window for you. Throw lots of
 files at me quickly and I&amp;rsquo;ll organize them in one window with a sidebar.&lt;/p&gt;
+
+&lt;h3 id=&#34;common-uses:8a07c3dae13f18d0c06cf5f9e482b173&#34;&gt;Common Uses&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;saving terminal output for reference&lt;/li&gt;
+&lt;li&gt;improved tool output&lt;/li&gt;
+&lt;li&gt;quick viewing of local html files&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h3 id=&#34;links:8a07c3dae13f18d0c06cf5f9e482b173&#34;&gt;Links:&lt;/h3&gt;
 

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="">
+<meta name="generator" content="Hugo 0.14" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://localhost:1313/css/style.css" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" type="text/css">
+<link rel="alternate" href="http://localhost:1313/index.xml" type="application/rss+xml" title="Fenestro: cli-&gt;html window">
+<title>tips - Fenestro: cli-&gt;html window</title>
+</head>
+<body>
+
+<header>
+	<div class="container">
+
+		<h2 class="site-title">
+			<a class="path" href="http://localhost:1313/">
+				<span class="base05">[</span><span class="base08">F</span><span
+													class="base09">e</span><span
+													class="base0a">n</span><span 
+													class="base0b">e</span><span 
+													class="base0c">s</span><span 
+													class="base0d">t</span><span 
+													class="base0f">r</span><span 
+													class="base08">o</span><span 
+				class="base05">]</span>
+			</a>
+			<span class="base05">command line -> html window</span>
+		</h2>
+
+		<div class="color-banner">
+			<img src="/images/palette.svg" alt="color gradient" 
+				title="color gradient"/>
+		</div>
+
+		<div class="navigation">
+			<ul>
+				<li><a href="/">home</a></li>
+				<li><a href="/screenshots/">screenshots</a></li>
+				<li><a href="/tips/">tips & tricks</a></li>
+				<li><a href="https://github.com/masukomi/fenestro#readme">usage</a>
+				<li><a href="/downloads/fenestro_1.dmg">download</a></li>
+				<li><a href="https://twitter.com/fenestro_app">twitter</a></li>
+			</ul>
+	</div>
+</header>
+
+<div class="container">
+
+
+<main role="main" class="article">
+  
+<article class="single" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2016-02-27">February 27, 2016</time></span>
+
+
+
+  </div>
+  <h1 class="headline" itemprop="headline">tips</h1>
+  <section class="body" itemprop="articleBody">
+    
+
+<h2 id="ready-to-get-started:e7ca16f375e6c22df64705b42852662b">Ready to get started?</h2>
+
+<p>The easiest way to get started with Fenestro is to start piping output from
+your current command line apps into it. There are two unix utilities you&rsquo;ll
+want in your arsenal to make this happen.</p>
+
+<h3 id="converting-command-line-output-to-html-with-aha:e7ca16f375e6c22df64705b42852662b">Converting command line output to HTML with aha</h3>
+
+<p>Aha is a simple utility that converts command line input to HTML. That&rsquo;s it. You
+can install it with <a href="http://brew.sh/">Homebrew</a> by saying <code>brew install aha</code></p>
+
+<p>I&rsquo;d recommend running it with the <code>--black</code> option if you run a dark terminal
+theme.</p>
+
+<h3 id="maintain-colored-output-from-your-commands-with-unbuffer:e7ca16f375e6c22df64705b42852662b">Maintain colored output from your commands with unbuffer</h3>
+
+<p>When you pipe from one command to another you loose the ANSI Color Codes.
+For example <code>git diff HEAD^</code> would give you a colorized diff of your code,
+but when you pipe it to another tool like aha, it becomes plain, colorless,
+text. To maintain those colors you&rsquo;ll want to install &ldquo;unbuffer&rdquo;. Again, you
+can find it in homebrew and install by saying
+<code>brew install homebrew/dupes/expect</code></p>
+
+<p><strong>Note</strong>: Unbuffer works by convincing your tool that it&rsquo;s outputting to
+an interactive buffer. Some tools, like git, expect you to page through
+long output in interactive mode. You&rsquo;ll need to disable that on calls that
+go through unbuffer. With git you just append <code>--no-pager</code> immediately after
+<code>git</code> For example: <code>git --no-pager diff HEAD^</code></p>
+
+<h3 id="putting-it-all-together:e7ca16f375e6c22df64705b42852662b">Putting it all together</h3>
+
+<p>Once you&rsquo;ve got fenestro, unbuffer, and aha installed, you can chain them together like this:</p>
+
+<pre><code>unbuffer git --no-pager diff HEAD^ | aha --black \
+| fenestro --name &quot;diff&quot;
+</code></pre>
+
+<p>For things you&rsquo;ll use often, save yourself typing by making a function in your
+<code>~/.bashrc</code></p>
+
+<pre><code>function dtf{ #diff to fenestro
+    unbuffer git --no-pager diff &quot;$@&quot; | aha --black \
+    | fenestro --name &quot;diff&quot;
+}
+# call that with
+# dtf HEAD^
+# to get the same effect as the longer command above
+</code></pre>
+
+  </section>
+</article>
+
+</main>
+
+
+</div>
+
+<footer>
+  <div class="container">
+    <span class="copyright">&copy; 2016  Fenestro: cli-&gt;html window - <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+  </div>
+</footer>
+
+<script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>
+
