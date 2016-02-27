@@ -1,0 +1,9 @@
+{{ $baseurl := .Site.BaseURL }}
+<main role="main" class="homepage">
+
+  <div class="article-list">
+    {{ range where .Data.Pages "Title" "hello" }}
+       {{ partial "article.html" . }}
+    {{ end }}
+  </div>
+</main>

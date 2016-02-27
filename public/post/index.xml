@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on My New Hugo Site</title>
+    <title>Posts on Fenestro: cli-&gt;html window</title>
     <link>http://localhost:1313/post/</link>
-    <description>Recent content in Posts on My New Hugo Site</description>
+    <description>Recent content in Posts on Fenestro: cli-&gt;html window</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 26 Feb 2016 08:06:18 -0500</lastBuildDate>
@@ -11,10 +11,10 @@
     
     <item>
       <title>hello</title>
-      <link>http://localhost:1313/post/hello/</link>
+      <link>http://localhost:1313/2016/02/hello/</link>
       <pubDate>Fri, 26 Feb 2016 08:06:18 -0500</pubDate>
       
-      <guid>http://localhost:1313/post/hello/</guid>
+      <guid>http://localhost:1313/2016/02/hello/</guid>
       <description>
 
 &lt;h2 id=&#34;hello-i-m-fenestro:8a07c3dae13f18d0c06cf5f9e482b173&#34;&gt;Hello: I&amp;rsquo;m Fenestro.&lt;/h2&gt;

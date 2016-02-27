@@ -1,3 +1,10 @@
-baseurl = "http://replace-this-with-your-hugo-site.com/"
+baseurl = "https://fenestro.xyz"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Fenestro: cli->html window"
+description = "A simple Mac app to render HTML from the command line"
+
+[params]
+author = "masukomi"
+
+[permalinks]
+post = "/:year/:month/:title/"

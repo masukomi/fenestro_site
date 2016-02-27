@@ -5,7 +5,7 @@ title = "screenshots"
 
 +++
 
-## [Fenestro](/) Screenshots
+## Fenestro Screenshots
 
 Usually screenshots are a great way to show off your app, but I'll display whatever you tell me to, just like your favorite web browser does. Thus, my screenshots could show _anything_.
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
+    <title>Fenestro: cli-&gt;html window</title>
     <link>http://localhost:1313/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <description>Recent content on Fenestro: cli-&gt;html window</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 26 Feb 2016 08:06:18 -0500</lastBuildDate>
@@ -11,35 +11,42 @@
     
     <item>
       <title>hello</title>
-      <link>http://localhost:1313/post/hello/</link>
+      <link>http://localhost:1313/hello/</link>
       <pubDate>Fri, 26 Feb 2016 08:06:18 -0500</pubDate>
       
-      <guid>http://localhost:1313/post/hello/</guid>
+      <guid>http://localhost:1313/hello/</guid>
       <description>
-
-&lt;h2 id=&#34;hello-i-m-fenestro:8a07c3dae13f18d0c06cf5f9e482b173&#34;&gt;Hello: I&amp;rsquo;m Fenestro.&lt;/h2&gt;
 
 &lt;p&gt;&lt;object id=&#34;fenestro_image&#34; type=&#34;image/svg+xml&#34;
         data=&#34;/images/fenestro.svg&#34; style=&#34;width: 25%&#34;&gt;&lt;img
         src=&#34;http://localhost:1313/images/fenestro_256x256.png&#34; alt=&#34;fenestro icon&#34; 
         title=&#34;fenestro icon&#34;/&gt;&lt;/object&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Command line output isn&amp;rsquo;t pretty, and it tends to scroll away. I fix that for you&lt;/strong&gt; (on OS X).&lt;/p&gt;
+&lt;h2 id=&#34;hello-i-m-fenestro:8a07c3dae13f18d0c06cf5f9e482b173&#34;&gt;Hello: I&amp;rsquo;m Fenestro.&lt;/h2&gt;
 
-&lt;p&gt;With the help of commands like &lt;a href=&#34;https://github.com/theZiz/aha#readme&#34;&gt;aha&lt;/a&gt; &lt;em&gt;any&lt;/em&gt; ANSI output can be converted to HTML.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Command line output isn&amp;rsquo;t pretty, and it tends to scroll away. I&amp;rsquo;m a simple
+Mac app that fixes that for you.&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;Throw in some creativity and you can build command line tools or adapters that produce beautiful cli output with useful links, images, and anything else you can imagine.&lt;/p&gt;
+&lt;p&gt;With the help of commands like &lt;a href=&#34;https://github.com/theZiz/aha#readme&#34;&gt;aha&lt;/a&gt; &lt;em&gt;any&lt;/em&gt;
+command line output can be converted to HTML (see &lt;a href=&#34;http://localhost:1313/tips/&#34;&gt;tips&lt;/a&gt;).&lt;/p&gt;
 
-&lt;p&gt;I&amp;rsquo;ll take that beautiful HTML, and throw it in a window for you. Throw lots of files at me quickly and I&amp;rsquo;ll organize them in one window with a sidebar.&lt;/p&gt;
+&lt;p&gt;Throw in some creativity and you can build command line tools or adapters that
+produce beautiful cli output with useful links, images, and anything else you
+can imagine.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ll take that beautiful HTML, and throw it in a window for you. Throw lots of
+files at me quickly and I&amp;rsquo;ll organize them in one window with a sidebar.&lt;/p&gt;
 
 &lt;h3 id=&#34;links:8a07c3dae13f18d0c06cf5f9e482b173&#34;&gt;Links:&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;screenshots.html&#34;&gt;Screenshots&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;downloads/fenestro_1.dmg&#34;&gt;Download me.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/screenshots/&#34;&gt;Screenshots&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/downloads/fenestro_1.dmg&#34;&gt;Download me&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/masukomi/fenestro#readme&#34;&gt;Usage&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;tips.html&#34;&gt;Tips &amp;amp; Tricks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/tips/&#34;&gt;Tips &amp;amp; Tricks&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;P.S. I&amp;rsquo;m Open Source too. ;)&lt;/p&gt;
 </description>
     </item>
     
@@ -51,7 +58,7 @@
       <guid>http://localhost:1313/screenshots/</guid>
       <description>
 
-&lt;h2 id=&#34;fenestro-screenshots:bfc7667dcae3e518ce13c3e8ae3d0018&#34;&gt;&lt;a href=&#34;http://localhost:1313/&#34;&gt;Fenestro&lt;/a&gt; Screenshots&lt;/h2&gt;
+&lt;h2 id=&#34;fenestro-screenshots:bfc7667dcae3e518ce13c3e8ae3d0018&#34;&gt;Fenestro Screenshots&lt;/h2&gt;
 
 &lt;p&gt;Usually screenshots are a great way to show off your app, but I&amp;rsquo;ll display whatever you tell me to, just like your favorite web browser does. Thus, my screenshots could show &lt;em&gt;anything&lt;/em&gt;.&lt;/p&gt;
 
