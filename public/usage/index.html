@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="masukomi">
+<meta name="generator" content="Hugo 0.14" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" type="text/css">
+<link rel="alternate" href="https://fenestro.xyz/index.xml" type="application/rss+xml" title="Fenestro: cli-&gt;html window">
+<link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,700' rel='stylesheet' type='text/css'>
+<title>usage - Fenestro: cli-&gt;html window</title>
+</head>
+<body>
+
+<header>
+	<div class="container">
+
+		<h2 class="site-title">
+			<a class="path" href="https://fenestro.xyz">
+				<span class="base05">[</span><span class="base08">F</span><span
+													class="base09">e</span><span
+													class="base0a">n</span><span 
+													class="base0b">e</span><span 
+													class="base0c">s</span><span 
+													class="base0d">t</span><span 
+													class="base0f">r</span><span 
+													class="base08">o</span><span 
+				class="base05">]</span>
+			</a>
+			<span class="base05">command line -> html window</span>
+		</h2>
+
+		<div class="color-banner">
+			<img src="/images/palette.svg" alt="color gradient" 
+				title="color gradient"/>
+		</div>
+
+		<div class="navigation">
+			<ul>
+				<li><a href="/">home</a></li>
+				<li><a href="/screenshots/">screenshots</a></li>
+				<li><a href="/tips/">tips & tricks</a></li>
+				<li><a href="/usage/">usage</a></li>
+				<li><a href="/downloads/fenestro_1.dmg">download</a></li>
+				<li><a href="https://twitter.com/fenestro_app">twitter</a></li>
+			</ul>
+	</div>
+</header>
+
+<div class="container">
+
+
+<main role="main" class="article">
+  
+<article class="single" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2016-02-27">February 27, 2016</time></span>
+
+
+
+  </div>
+  <h1 class="headline" itemprop="headline">usage</h1>
+  <section class="body" itemprop="articleBody">
+    
+
+<p>Fenestro is a simple OS X app that takes HTML in via the command line, and
+renders it in a window.</p>
+
+<h2 id="common-use-cases:dc32fe45042973266ca60588597e0b66">Common use cases:</h2>
+
+<h3 id="saving-terminal-output-for-reference:dc32fe45042973266ca60588597e0b66">Saving terminal output for reference</h3>
+
+<p>It&rsquo;s not uncommon to run a grep, ls, or find on the command line which you end
+up scrolling back up to again and again as you take action based on its output.
+Fenestro will let you shunt that output into a window for reference. Just pipe
+it through an app like <a href="https://github.com/theZiz/aha">aha</a> which can convert
+the output to HTML.</p>
+
+<pre><code class="language-bash"># save off a list of all the instances of &quot;foo&quot;
+ack --color foo activesupport/test | aha | fenestro
+</code></pre>
+
+<h3 id="quick-view-of-html-files-on-your-system:dc32fe45042973266ca60588597e0b66">Quick view of HTML files on your system</h3>
+
+<p>Fenestro provides an easy way to quickly view HTML files on the command line.
+Maybe you&rsquo;ve downloaded a repo, and the README is in HTML. Yes, you could do
+this with your web browser. Fenestro keeps it from opening as yet another tab in
+one of your 20 windows spread across 4 desktops with 30 tabs each. ;)</p>
+
+<pre><code class="language-bash">fenestro --path path/to/README.html
+</code></pre>
+
+<h3 id="better-tool-output:dc32fe45042973266ca60588597e0b66">Better tool output</h3>
+
+<p>The deeper you go down the rabbit hole of command line awesomeness, the more
+powerful your tools become. The more powerful your tools become the more poorly
+suited the terminal is to outputting the details. Now your command line tools
+can create visually complex, and useful output with crazy things like&hellip; *gasp*
+images.</p>
+
+<hr />
+
+<p><strong>Compilation &amp; Installation instructions are at the bottom of this document.</strong></p>
+
+<hr />
+
+<h1 id="usage:dc32fe45042973266ca60588597e0b66">Usage</h1>
+
+<h2 id="command-line-options:dc32fe45042973266ca60588597e0b66">Command line options</h2>
+
+<h3 id="path-to-a-file:dc32fe45042973266ca60588597e0b66">Path To A File</h3>
+
+<pre><code>-p file_path
+--path=file_path
+</code></pre>
+
+<p>Load HTML to be rendered from the specified file</p>
+
+<h3 id="display-name-for-the-html-file:dc32fe45042973266ca60588597e0b66">Display name for the html file</h3>
+
+<pre><code>-n name
+--name=name
+</code></pre>
+
+<p>The name that should be displayed in the sidebar. For example</p>
+
+<pre><code>fenestro -p path/to/foo.html -n &quot;foo.rb&quot;
+</code></pre>
+
+<p>would display <code>foo.rb</code> in the sidebar.</p>
+
+<h3 id="version:dc32fe45042973266ca60588597e0b66">Version</h3>
+
+<pre><code>-v
+--version
+</code></pre>
+
+<p>Load an HTML page that displays the current version of the app.</p>
+
+<hr />
+
+<h1 id="compilation-installation:dc32fe45042973266ca60588597e0b66">Compilation &amp; Installation</h1>
+
+<p>Presuming you&rsquo;ve obtained
+<a href="https://github.com/masukomi/fenestro">the source code from GitHub</a>&hellip;</p>
+
+<pre><code class="language-bash">$ git submodule update --init
+$ make
+$ mv build/Release/Fenestro.app /Applications/
+</code></pre>
+
+<p>Then double-click <code>Fenestro.app</code>. It will present you with a dialog, asking
+where you&rsquo;d like to install the command line tool.</p>
+
+  </section>
+</article>
+
+</main>
+
+
+</div>
+
+<footer>
+  <div class="container">
+    <span class="copyright">&copy; 2016  Fenestro: cli-&gt;html window - <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
+

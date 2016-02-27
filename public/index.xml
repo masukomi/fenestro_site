@@ -2,19 +2,118 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fenestro: cli-&gt;html window</title>
-    <link>http://localhost:1313/</link>
+    <link>https://fenestro.xyz/</link>
     <description>Recent content on Fenestro: cli-&gt;html window</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 27 Feb 2016 11:07:26 -0500</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 Feb 2016 12:22:15 -0500</lastBuildDate>
+    <atom:link href="https://fenestro.xyz/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>usage</title>
+      <link>https://fenestro.xyz/usage/</link>
+      <pubDate>Sat, 27 Feb 2016 12:22:15 -0500</pubDate>
+      
+      <guid>https://fenestro.xyz/usage/</guid>
+      <description>
+
+&lt;p&gt;Fenestro is a simple OS X app that takes HTML in via the command line, and
+renders it in a window.&lt;/p&gt;
+
+&lt;h2 id=&#34;common-use-cases:dc32fe45042973266ca60588597e0b66&#34;&gt;Common use cases:&lt;/h2&gt;
+
+&lt;h3 id=&#34;saving-terminal-output-for-reference:dc32fe45042973266ca60588597e0b66&#34;&gt;Saving terminal output for reference&lt;/h3&gt;
+
+&lt;p&gt;It&amp;rsquo;s not uncommon to run a grep, ls, or find on the command line which you end
+up scrolling back up to again and again as you take action based on its output.
+Fenestro will let you shunt that output into a window for reference. Just pipe
+it through an app like &lt;a href=&#34;https://github.com/theZiz/aha&#34;&gt;aha&lt;/a&gt; which can convert
+the output to HTML.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# save off a list of all the instances of &amp;quot;foo&amp;quot;
+ack --color foo activesupport/test | aha | fenestro
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;quick-view-of-html-files-on-your-system:dc32fe45042973266ca60588597e0b66&#34;&gt;Quick view of HTML files on your system&lt;/h3&gt;
+
+&lt;p&gt;Fenestro provides an easy way to quickly view HTML files on the command line.
+Maybe you&amp;rsquo;ve downloaded a repo, and the README is in HTML. Yes, you could do
+this with your web browser. Fenestro keeps it from opening as yet another tab in
+one of your 20 windows spread across 4 desktops with 30 tabs each. ;)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;fenestro --path path/to/README.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;better-tool-output:dc32fe45042973266ca60588597e0b66&#34;&gt;Better tool output&lt;/h3&gt;
+
+&lt;p&gt;The deeper you go down the rabbit hole of command line awesomeness, the more
+powerful your tools become. The more powerful your tools become the more poorly
+suited the terminal is to outputting the details. Now your command line tools
+can create visually complex, and useful output with crazy things like&amp;hellip; *gasp*
+images.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Compilation &amp;amp; Installation instructions are at the bottom of this document.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;usage:dc32fe45042973266ca60588597e0b66&#34;&gt;Usage&lt;/h1&gt;
+
+&lt;h2 id=&#34;command-line-options:dc32fe45042973266ca60588597e0b66&#34;&gt;Command line options&lt;/h2&gt;
+
+&lt;h3 id=&#34;path-to-a-file:dc32fe45042973266ca60588597e0b66&#34;&gt;Path To A File&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;-p file_path
+--path=file_path
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Load HTML to be rendered from the specified file&lt;/p&gt;
+
+&lt;h3 id=&#34;display-name-for-the-html-file:dc32fe45042973266ca60588597e0b66&#34;&gt;Display name for the html file&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;-n name
+--name=name
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The name that should be displayed in the sidebar. For example&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;fenestro -p path/to/foo.html -n &amp;quot;foo.rb&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;would display &lt;code&gt;foo.rb&lt;/code&gt; in the sidebar.&lt;/p&gt;
+
+&lt;h3 id=&#34;version:dc32fe45042973266ca60588597e0b66&#34;&gt;Version&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;-v
+--version
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Load an HTML page that displays the current version of the app.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;compilation-installation:dc32fe45042973266ca60588597e0b66&#34;&gt;Compilation &amp;amp; Installation&lt;/h1&gt;
+
+&lt;p&gt;Presuming you&amp;rsquo;ve obtained
+&lt;a href=&#34;https://github.com/masukomi/fenestro&#34;&gt;the source code from GitHub&lt;/a&gt;&amp;hellip;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ git submodule update --init
+$ make
+$ mv build/Release/Fenestro.app /Applications/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then double-click &lt;code&gt;Fenestro.app&lt;/code&gt;. It will present you with a dialog, asking
+where you&amp;rsquo;d like to install the command line tool.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>tips</title>
-      <link>http://localhost:1313/tips/</link>
+      <link>https://fenestro.xyz/tips/</link>
       <pubDate>Sat, 27 Feb 2016 11:07:26 -0500</pubDate>
       
-      <guid>http://localhost:1313/tips/</guid>
+      <guid>https://fenestro.xyz/tips/</guid>
       <description>
 
 &lt;h2 id=&#34;ready-to-get-started:e7ca16f375e6c22df64705b42852662b&#34;&gt;Ready to get started?&lt;/h2&gt;
@@ -70,15 +169,15 @@ go through unbuffer. With git you just append &lt;code&gt;--no-pager&lt;/code&gt
     
     <item>
       <title>hello</title>
-      <link>http://localhost:1313/hello/</link>
+      <link>https://fenestro.xyz/hello/</link>
       <pubDate>Fri, 26 Feb 2016 08:06:18 -0500</pubDate>
       
-      <guid>http://localhost:1313/hello/</guid>
+      <guid>https://fenestro.xyz/hello/</guid>
       <description>
 
 &lt;p&gt;&lt;object id=&#34;fenestro_image&#34; type=&#34;image/svg+xml&#34;
         data=&#34;/images/fenestro.svg&#34; style=&#34;width: 25%&#34;&gt;&lt;img
-        src=&#34;http://localhost:1313/images/fenestro_256x256.png&#34; alt=&#34;fenestro icon&#34; 
+        src=&#34;https://fenestro.xyz/images/fenestro_256x256.png&#34; alt=&#34;fenestro icon&#34; 
         title=&#34;fenestro icon&#34;/&gt;&lt;/object&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;hello-i-m-fenestro:8a07c3dae13f18d0c06cf5f9e482b173&#34;&gt;Hello: I&amp;rsquo;m Fenestro.&lt;/h2&gt;
@@ -107,22 +206,22 @@ files at me quickly and I&amp;rsquo;ll organize them in one window with a sideba
 &lt;h3 id=&#34;links:8a07c3dae13f18d0c06cf5f9e482b173&#34;&gt;Links:&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/screenshots/&#34;&gt;Screenshots&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/downloads/fenestro_1.dmg&#34;&gt;Download me&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://fenestro.xyz/screenshots/&#34;&gt;Screenshots&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://fenestro.xyz/downloads/fenestro_1.dmg&#34;&gt;Download me&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/masukomi/fenestro#readme&#34;&gt;Usage&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/tips/&#34;&gt;Tips &amp;amp; Tricks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://fenestro.xyz/tips/&#34;&gt;Tips &amp;amp; Tricks&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;P.S. I&amp;rsquo;m Open Source too. ;)&lt;/p&gt;
+&lt;p&gt;P.S. &lt;a href=&#34;(https://github.com/masukomi/fenestro#readme&#34;&gt;I&amp;rsquo;m Open Source&lt;/a&gt; too. ;)&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>screenshots</title>
-      <link>http://localhost:1313/screenshots/</link>
+      <link>https://fenestro.xyz/screenshots/</link>
       <pubDate>Fri, 26 Feb 2016 07:59:31 -0500</pubDate>
       
-      <guid>http://localhost:1313/screenshots/</guid>
+      <guid>https://fenestro.xyz/screenshots/</guid>
       <description>
 
 &lt;h2 id=&#34;fenestro-screenshots:bfc7667dcae3e518ce13c3e8ae3d0018&#34;&gt;Fenestro Screenshots&lt;/h2&gt;
@@ -131,10 +230,10 @@ files at me quickly and I&amp;rsquo;ll organize them in one window with a sideba
 
 &lt;p&gt;If you ask Fenestro to render just one piece of HTML you&amp;rsquo;ll see a simple window with your HTML rendered in it.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/simple_git_diff_example.png&#34; alt=&#34;simple example&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://fenestro.xyz/images/simple_git_diff_example.png&#34; alt=&#34;simple example&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;If you ask Fenestro to a bunch of files quickly, he&amp;rsquo;ll group them and give you a nav bar to change between them.
-&lt;img src=&#34;http://localhost:1313/images/multi_file_example.png&#34; alt=&#34;multi-file example&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;https://fenestro.xyz/images/multi_file_example.png&#34; alt=&#34;multi-file example&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
