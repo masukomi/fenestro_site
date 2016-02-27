@@ -341,7 +341,9 @@ article.single section.body h5 { color: #515151; }
 article.single section.body h6 { color: #747369; }
 
 article.single section.body a { color: #d27b53; }
-
+section.body img {
+	max-width: 100%;
+}
 /* Article Elements */
 
 article.single pre {

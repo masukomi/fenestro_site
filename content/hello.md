@@ -39,4 +39,4 @@ files at me quickly and I'll organize them in one window with a sidebar.
 *   [Usage](https://github.com/masukomi/fenestro#readme)
 *   [Tips & Tricks](/tips/)
 
-P.S. I'm Open Source too. ;) 
+P.S. [I'm Open Source]((https://github.com/masukomi/fenestro#readme) too. ;) 
